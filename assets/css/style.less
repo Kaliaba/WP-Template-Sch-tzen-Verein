@@ -1,0 +1,71 @@
+// out: ../../style.css, sourcemap: true, compress: true
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab');
+
+@text: 'Quattrocento', serif;
+@heading: 'Nunito', sans-serif;
+
+//colors
+@sva-green: #1A4231;
+@sva-yellow: #F6F841;
+@textcolor: #414141;
+
+body{
+  color: @textcolor;
+  font-family: @text;
+  font-size: 14px;
+}
+
+.heading{
+  font-family: @heading;
+}
+
+.blog-main{
+  margin:auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+//----Header----
+#site-header{
+  display: grid;
+  grid-template-columns: [logo] 150px [title] 2fr [nav] 3fr;
+  grid-template-rows: [top] 100px [bottom] 50px;
+}
+
+#logo{
+  width: 100%;
+  grid-column: logo;
+  grid-row: top / bottom;
+}
+
+#site-title{
+  grid-column: title;
+  grid-row: top;
+  text-decoration: none;
+  color: @sva-green;
+  font-size: 1.5em;
+}
+
+#site-description{
+  grid-column: title;
+  grid-row: bottom;
+}
+
+#main-nav{
+  grid-column: nav;
+  grid-row: bottom;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  a{
+    text-decoration: none;
+    color: @textcolor;
+  }
+
+  li{
+      list-style: none;
+      padding: 0 20px 0 20px;
+  }
+}
