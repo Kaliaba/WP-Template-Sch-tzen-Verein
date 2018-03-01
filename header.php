@@ -11,6 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
 	<link href="<?php echo get_bloginfo('template_directory');?>/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -22,10 +23,10 @@
 <div class="container">
 	<header id="site-header">
 			<img id="logo" src="<?php echo get_bloginfo('template_directory');?>/assets/images/sv-aurich_Farbe.png">
-	    <h1><a id="site-title" class="heading" href="<?php echo get_bloginfo('wpurl');?>"><?php echo get_bloginfo('name'); ?></a></h1>
-	    <p id="site-description" class="lead blog-description"><?php echo get_bloginfo('description'); ?></p>
+	    <h1 id="site-title"><a class="heading" href="<?php echo get_bloginfo('wpurl');?>"><?php echo get_bloginfo('name'); ?></a></h1>
 
   <nav id="main-nav">
+			<li class="burger-menu-icon"><i class="material-icons">menu</i></li>
       <?php wp_list_pages('&title_li='); ?>
   </nav>
 </header>

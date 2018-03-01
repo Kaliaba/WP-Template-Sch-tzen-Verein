@@ -1,71 +1,196 @@
 // out: ../../style.css, sourcemap: true, compress: true
 @import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab');
-
-@text: 'Quattrocento', serif;
-@heading: 'Nunito', sans-serif;
-
-//colors
-@sva-green: #1A4231;
+@text: 'Nunito', serif;
+@heading: 'Quattrocento Sans', sans-serif; //----Colors----
+@sva-green: #006837;
 @sva-yellow: #F6F841;
-@textcolor: #414141;
+@textcolor: #414141; //----Basic Styles----
 
-body{
+body {
   color: @textcolor;
   font-family: @text;
-  font-size: 14px;
+  font-size: medium;
+  margin: 0;
 }
 
-.heading{
+.heading {
   font-family: @heading;
 }
 
-.blog-main{
-  margin:auto;
+h1 {
+  font-size: xx-large;
+  font-weight: normal;
+  .heading;
+}
+
+h2 {
+  font-size: x-large;
+  font-weight: normal;
+  .heading;
+}
+
+h3 {
+  font-size: large;
+  font-weight: bold;
+  .heading;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.lable {
+  font-family: @heading;
+  white-space: nowrap;
+}
+
+.blog-main {
+  margin: auto;
   width: 80%;
   max-width: 800px;
 }
-
 //----Header----
-#site-header{
+
+#site-header {
   display: grid;
-  grid-template-columns: [logo] 150px [title] 2fr [nav] 3fr;
-  grid-template-rows: [top] 100px [bottom] 50px;
+  grid-template-columns: [logo] auto [title] 1fr [nav] 3fr;
+  grid-template-rows: [top] auto [nav] 50px;
+  align-items: center;
 }
 
-#logo{
-  width: 100%;
+#logo {
+  height: 100%;
+  width: auto;
   grid-column: logo;
-  grid-row: top / bottom;
+  grid-row: top / span 2;
 }
 
-#site-title{
+#site-title {
   grid-column: title;
-  grid-row: top;
+  grid-row: top / span 2;
   text-decoration: none;
   color: @sva-green;
-  font-size: 1.5em;
+  font-size: xx-large;
+
+  a {
+    text-decoration: none;
+    color: @textcolor;
+  }
 }
 
-#site-description{
-  grid-column: title;
-  grid-row: bottom;
-}
-
-#main-nav{
+#main-nav {
   grid-column: nav;
-  grid-row: bottom;
+  grid-row: nav;
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 
-  a{
+  a {
     text-decoration: none;
     color: @textcolor;
   }
 
-  li{
-      list-style: none;
-      padding: 0 20px 0 20px;
+  li {
+    list-style: none;
+    text-align: center;
+    padding: 0 15px;
+    .lable;
   }
+
+  .burger-menu-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #site-header {
+    display: grid;
+    grid-template-columns: [logo] auto [title] auto;
+    grid-template-rows: [top] auto [nav] auto;
+  }
+
+  #logo {
+    grid-row: top;
+  }
+
+  #site-title {
+    grid-row: top;
+  }
+
+  #main-nav {
+    grid-column: logo / span 2;
+    grid-row: nav;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #site-header {
+    display: grid;
+    grid-template-columns: [logo] auto [title] auto;
+    grid-template-rows: [top] auto [nav] auto;
+  }
+
+  #main-nav {
+    grid-column: logo / span 2;
+    grid-row: nav;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: @textcolor;
+    }
+
+    li:not(:first-child) {
+      display: none;
+      list-style: none;
+      text-align: center;
+      padding: 0 15px;
+      .lable;
+    }
+
+    .burger-menu-icon {
+      display: block;
+      opacity: 0;
+      z-index: 2;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+      i{
+        font-size: 38px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+    }
+  }
+}
+//----Page Styles----
+
+.page-title {
+  display: grid;
+  grid-column: auto;
+  grid-row: auto;
+  align-items: center;
+  background-color: @sva-green;
+  color: white;
+  width: 100%;
+  height: 5em;
+  text-align: center;
+  font-size: 3em;
+  margin:0;
+  .heading;
+}
+
+.page-content {
+  margin: auto;
+  width: 80%;
+  max-width: 1000px;
 }
