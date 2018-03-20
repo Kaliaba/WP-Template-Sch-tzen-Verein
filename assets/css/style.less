@@ -1,16 +1,25 @@
 // out: ../../style.css, sourcemap: true, compress: true
-@import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab|Source+Sans+Pro:300,400,600,700');
+@import 'footer.less';
 @text: 'Nunito', serif;
-@heading: 'Quattrocento Sans', sans-serif; //----Colors----
+@heading: 'Source Sans Pro', sans-serif;
+
+//----Colors----
 @sva-green: #006837;
 @sva-yellow: #F6F841;
-@textcolor: #414141; //----Basic Styles----
+@textcolor: #414141;
 
+//----Basic Styles----
+html{
+   height: 100%;
+}
 body {
   color: @textcolor;
   font-family: @text;
   font-size: medium;
   margin: 0;
+  min-height: 100%;
+  position: relative;
 }
 
 .heading {
@@ -172,6 +181,8 @@ img {
     }
   }
 }
+
+
 //----Page Styles----
 
 .page-title {
@@ -182,9 +193,10 @@ img {
   background-color: @sva-green;
   color: white;
   width: 100%;
-  height: 5em;
+  height: 4em;
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
+  font-weight: 300;
   margin:0;
   .heading;
 }
@@ -193,4 +205,5 @@ img {
   margin: auto;
   width: 80%;
   max-width: 1000px;
+  padding-bottom: 8rem;
 }
