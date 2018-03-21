@@ -1,6 +1,7 @@
 // out: ../../style.css, sourcemap: true, compress: true
-@import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab|Source+Sans+Pro:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
 @import 'footer.less';
+@import 'navigation.less';
 @text: 'Nunito', serif;
 @heading: 'Source Sans Pro', sans-serif;
 
@@ -12,6 +13,7 @@
 //----Basic Styles----
 html{
    height: 100%;
+   overflow-y: scroll;
 }
 body {
   color: @textcolor;
@@ -62,57 +64,32 @@ img {
 //----Header----
 
 #site-header {
-  display: grid;
-  grid-template-columns: [logo] auto [title] 1fr [nav] 3fr;
-  grid-template-rows: [top] auto [nav] 50px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: auto;
   align-items: center;
+  padding: 0 40px 0 40px;
 }
 
 #logo {
-  height: 100%;
+  height: 150px;
   width: auto;
-  grid-column: logo;
-  grid-row: top / span 2;
 }
 
 #site-title {
-  grid-column: title;
-  grid-row: top / span 2;
   text-decoration: none;
   color: @sva-green;
-  font-size: xx-large;
+  font-size: 70px;
+  font-weight: lighter;
+  margin: 10px;
 
   a {
     text-decoration: none;
     color: @textcolor;
   }
 }
-
-#main-nav {
-  grid-column: nav;
-  grid-row: nav;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  a {
-    text-decoration: none;
-    color: @textcolor;
-  }
-
-  li {
-    list-style: none;
-    text-align: center;
-    padding: 0 15px;
-    .lable;
-  }
-
-  .burger-menu-icon {
-    display: none;
-  }
-}
-
+/*
 @media screen and (max-width: 1000px) {
   #site-header {
     display: grid;
@@ -181,7 +158,7 @@ img {
     }
   }
 }
-
+*/
 
 //----Page Styles----
 
@@ -195,9 +172,10 @@ img {
   width: 100%;
   height: 4em;
   text-align: center;
-  font-size: 4em;
+  font-size: 50px;
   font-weight: 300;
   margin:0;
+  padding:20px 0 20px 0;
   .heading;
 }
 
